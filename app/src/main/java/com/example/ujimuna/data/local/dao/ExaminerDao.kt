@@ -8,8 +8,11 @@ import com.example.ujimuna.data.local.entities.Examiner
 
 @Dao
 interface ExaminerDao {
-    @Query("SELECT * FROM examiner WHERE mahasiswaNim = :mahasiswaNim")
-    fun getByMahasiswaNim(mahasiswaNim: String): List<Examiner>
+    @Query("SELECT * FROM examiner WHERE examiner1Nip = :nip OR examiner2Nip = :nip OR examiner3Nip = :nip OR examiner4Nip = :nip")
+    fun getByExaminerNip(nip: String): List<Examiner>
+
+    @Query("SELECT * FROM examiner WHERE studentNim = :nip")
+    fun getByDosenNip(nip: String): List<Examiner>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(examiners: List<Examiner>)

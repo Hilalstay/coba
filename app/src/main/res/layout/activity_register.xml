@@ -1,36 +1,89 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/et_nim"
+        android:id="@+id/et_nim_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="NIM"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword" />
-
-    <ImageView
-        android:id="@+id/iv_photo_profile"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ic_photo_placeholder"
-        android:contentDescription="Profile Photo"/>
+        android:hint="Masukkan NIM" />
 
     <Button
-        android:id="@+id/btn_register"
+        android:id="@+id/btn_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:layout_marginTop="16dp"/>
+        android:text="Cari NIM" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_semester"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Semester"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_sks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SKS Lulus"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_judul_skripsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Judul Skripsi"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="File Skripsi" />
+
+        <ImageView
+            android:id="@+id/img_file_skripsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+        <ImageView
+            android:id="@+id/img_krs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_bukti_pembayaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_pas_foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_siap_skripsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Siap Skripsi"
+        android:visibility="gone" />
 </LinearLayout>

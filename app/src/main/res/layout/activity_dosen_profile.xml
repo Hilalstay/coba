@@ -1,0 +1,32 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Dosen Profile Details -->
+    <ImageView
+        android:id="@+id/img_profile"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:src="@drawable/profile"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama Dosen"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_nip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NIP Dosen"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>

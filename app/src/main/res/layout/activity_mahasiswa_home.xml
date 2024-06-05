@@ -1,0 +1,120 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/img_profile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/profile" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Mahasiswa" />
+
+    <TextView
+        android:id="@+id/tv_nim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIM" />
+
+    <LinearLayout
+        android:id="@+id/layout_jadwal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_waiting_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anda sudah terdaftar dalam sidang pengujian, Mohon tunggu beberapa saat untuk melihat jadwal pengujian"
+            android:visibility="gone" />
+
+        <!-- Jadwal layout -->
+        <LinearLayout
+            android:id="@+id/layout_jadwal_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_jadwal_nim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NIM" />
+
+            <TextView
+                android:id="@+id/tv_jadwal_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Mahasiswa" />
+
+            <TextView
+                android:id="@+id/tv_jadwal_semester"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Semester" />
+
+            <TextView
+                android:id="@+id/tv_jadwal_sks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SKS Lulus" />
+
+            <TextView
+                android:id="@+id/tv_jadwal_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judul Skripsi" />
+
+            <TextView
+                android:id="@+id/tv_jadwal_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tanggal" />
+
+            <TextView
+                android:id="@+id/tv_jadwal_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Waktu" />
+
+            <TextView
+                android:id="@+id/tv_jadwal_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lokasi" />
+
+            <TextView
+                android:id="@+id/tv_jadwal_examiner1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penguji 1" />
+
+            <TextView
+                android:id="@+id/tv_jadwal_examiner2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penguji 2" />
+
+            <TextView
+                android:id="@+id/tv_jadwal_examiner3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penguji 3" />
+
+            <TextView
+                android:id="@+id/tv_jadwal_examiner4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penguji 4" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

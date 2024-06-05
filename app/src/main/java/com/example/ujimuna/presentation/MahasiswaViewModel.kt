@@ -6,22 +6,20 @@ import com.example.ujimuna.domain.usecase.GetJadwalUseCase
 import com.example.ujimuna.domain.usecase.GetMahasiswaUseCase
 import kotlinx.coroutines.launch
 
-class MahasiswaViewModel(
-    private val getMahasiswaUseCase: GetMahasiswaUseCase,
-    private val getJadwalUseCase: GetJadwalUseCase
-) : ViewModel() {
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.ujimuna.data.local.database.AppDatabase
+import com.example.ujimuna.data.local.entities.Mahasiswa
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
-    fun getMahasiswa(nim: String) {
-        viewModelScope.launch {
-            val mahasiswa = getMahasiswaUseCase.execute(nim)
-            // Update UI with mahasiswa data
-        }
-    }
+class MahasiswaViewModel(application: Application) : AndroidViewModel(application) {
+    private val mahasiswaDao = AppDatabase.getDatabase(application).mahasiswaDao()
 
-    fun getJadwal(nim: String) {
-        viewModelScope.launch {
-            val jadwal = getJadwalUseCase.execute(nim)
-            // Update UI with jadwal data
+    suspend fun getMahasiswaByNIM(nim: String): Mahasiswa? {
+        return withContext(Dispatchers.IO) {
+            mahasiswaDao.getByNIM(nim)
         }
     }
 }
