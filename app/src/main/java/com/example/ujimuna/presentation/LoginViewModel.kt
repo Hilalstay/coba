@@ -1,4 +1,4 @@
-package com.example.ujimuna.presentation
+package com.muna.presentation
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -7,6 +7,9 @@ import com.example.ujimuna.data.remote.model.LoginRequest
 import com.example.ujimuna.data.remote.remote_data_source.RetrofitClient
 import kotlinx.coroutines.launch
 
+import com.example.ujimuna.data.remote.model.LoginResponse
+import retrofit2.Response
+
 class LoginViewModel : ViewModel() {
 
     fun login(userName: String, password: String) {
@@ -14,13 +17,13 @@ class LoginViewModel : ViewModel() {
 
         viewModelScope.launch {
             try {
-                val response = RetrofitClient.apiService.login(loginRequest)
+                val response: Response<LoginResponse> = RetrofitClient.apiService.login(loginRequest)
                 if (response.isSuccessful) {
                     val loginResponse = response.body()
                     if (loginResponse != null) {
                         // Handle successful response
                         if (loginResponse.message == "berhasil login") {
-                            val userData = loginResponse.token
+                            val userData = loginResponse.data
                             if (userData != null) {
                                 // Login success, handle user data
                                 Log.d("Login", "Name: ${userData.name}, Username: ${userData.user_name}")
