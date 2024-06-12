@@ -35,7 +35,7 @@ object DatabaseModule {
             override fun onCreate(db: SupportSQLiteDatabase) {
                 super.onCreate(db)
                 CoroutineScope(Dispatchers.IO).launch {
-                    populateDatabase(context.applicationContext, getDatabase(context.applicationContext))
+                    populateDatabase(context.applicationContext, AppDatabase.getDatabase(context.applicationContext))
                 }
             }
         }).build()
@@ -49,8 +49,8 @@ object DatabaseModule {
 
         // Dummy data for Mahasiswa
         val mahasiswaList = listOf(
-            Mahasiswa("123456", "John Doe", 4, 120, "Thesis", true, true, true, true),
-            Mahasiswa("789012", "Jane Smith", 5, 130, "Final Project", true, true, true, true)
+            Mahasiswa("123456", "MOHAMMAD RIZKI RAMADHANI", 14, 120, "ANALISIS HUKUM ISLAM TERHADAP PRAKTIK PEMBULATAN HARGA SEWA MENYEWA MOBIL DALAM BATAS WAKTU TERTENTU DI ARSAF RENTAL MALANG", true, true, true, true),
+            Mahasiswa("789012", "AHMAD ZAINUL MUSTHOFA", 14, 130, "TINJAUAN HUKUM PIDANA ISLAM DAN HUKUM POSITIF TERHADAP TINDAKAN PENANGKAPAN IKAN MENGGUNAKAN PUKAT HARIMAU (JARING TRAWL) DI DESA BLIMBING PACIRAN LAMONGAN", true, true, true, true)
         )
         mahasiswaDao.insertAll(mahasiswaList)
 
@@ -63,15 +63,14 @@ object DatabaseModule {
 
         // Dummy data for Jadwal
         val jadwalList = listOf(
-            Jadwal(0, "123456", Date(), "09:00", "Room A", "Dr. Smith", "Prof. Johnson", "Prof. Lee", "Dr. Brown"),
-            Jadwal(0, "789012", Date(), "10:00", "Room B", "Dr. Smith", "Prof. Johnson", "Prof. Lee", "Dr. Brown")
+            Jadwal(1, "123456", "MOHAMMAD RIZKI RAMADHANI","12/05/2024", "09:00", "Room A", "Dr. Smith", "Prof. Johnson", "Prof. Lee", "Dr. Brown"),
+            Jadwal(2, "789012", "AHMAD ZAINUL MUSTHOFA","15/06/2024", "10:00", "Room B", "Dr. Smith", "Prof. Johnson", "Prof. Lee", "Dr. Brown")
         )
         jadwalDao.insertAll(jadwalList)
 
         // Dummy data for Examiner
         val examinerList = listOf(
-            Examiner(0, "123456", "001", "approved"),
-            Examiner(0, "789012", "002", "reschedule")
+            Examiner(1, "123456", "MOHAMMAD RIZKI RAMADHANI","ANALISIS HUKUM ISLAM TERHADAP PRAKTIK PEMBULATAN HARGA SEWA MENYEWA MOBIL DALAM BATAS WAKTU TERTENTU DI ARSAF RENTAL MALANG","12/05/2024", "09:00", "Room A", "Dr. Smith", "Prof. Johnson", "Prof. Lee", "Dr. Brown")
         )
         examinerDao.insertAll(examinerList)
     }

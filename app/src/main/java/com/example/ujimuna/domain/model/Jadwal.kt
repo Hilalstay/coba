@@ -4,6 +4,7 @@ import java.util.Date
 
 data class Jadwal(
     val mahasiswaNim: String,
+    val nama: String,
     val tanggal: Date,
     val waktu: String,
     val ruang: String,

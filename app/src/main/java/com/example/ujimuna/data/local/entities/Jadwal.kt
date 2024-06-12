@@ -8,6 +8,7 @@ import java.util.Date
 data class Jadwal(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val mahasiswaNim: String,
+    val nama: String,
     val tanggal: String,
     val waktu: String,
     val ruang: String,
